@@ -50,3 +50,6 @@ Como o arquivo final de dados está sob políticas de .gitignore, siga o passo a
 * Vá em Transformar Dados (Power Query) e atualize o parâmetro de caminho local para apontar para o seu arquivo .csv recém-gerado.
 
 * Clique em Fechar e Aplicar para atualizar todos os gráficos automaticamente.
+
+### Dashboard no PowerBi Service
+https://app.powerbi.com/view?r=eyJrIjoiNDRhNjNhY2YtNjk5MC00ODc0LTk2ZDQtMDNkM2Y5ZjRmYzlhIiwidCI6ImUyNjUzOTI3LTk3MjgtNDFjZC04Y2QzLWFiMTI4YWNkMjA2MSJ9
