@@ -33,7 +33,7 @@ Para criar um conjunto de dados estatisticamente relevante (5.000+ registros), a
 Como o arquivo final de dados está sob políticas de .gitignore, siga o passo a passo abaixo para reproduzir o ambiente localmente:
 
  **Clonar o Repositório:**
-* git clone (https://github.com/hiagodearaujodantasteixeira/Projeto-Dengue)
+* git clone (https://github.com/hiagodearaujodantasteixeira/Projeto-Dengue.git)
   
  **Instalar Dependências:**
 * pip install pandas
