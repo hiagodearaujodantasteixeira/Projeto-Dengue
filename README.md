@@ -19,7 +19,7 @@ Este projeto consiste em um pipeline completo de Engenharia e Visualização de 
 ### 1. Desafio da API & Solução com Python (Engenharia de Dados)
 A API de Dados Abertos da Saúde do Governo Federal possui uma restrição severa de infraestrutura: **o parâmetro de limite máximo de registros por requisição é fixado em 20 itens**.
 
-Para criar um conjunto de dados estatisticamente relevante (5.000+ registros), a atualização direta via Power BI seria lenta e ineficiente. A solução foi criar um pipeline em Python em `src/extracao_api.py` contendo:
+Para criar um conjunto de dados estatisticamente relevante (10.000 registros), a atualização direta via Power BI seria lenta e ineficiente. A solução foi criar um pipeline em Python em `src/extracao_api.py` contendo:
 * **Loop de Paginação Dinâmica**: Utilização do parâmetro `offset` somando de 20 em 20 para varrer as páginas sequencialmente.
 * **Condição de Parada Automatizada**: O script detecta quando a API retorna um payload vazio `[]` e encerra o processo de forma limpa, evitando requisições desnecessárias.
 * **Tratamento de Exceções**: Verificação ativa de `status_code == 200` para garantir a resiliência do pipeline contra instabilidades nos servidores públicos.
@@ -40,7 +40,7 @@ Como o arquivo final de dados está sob políticas de .gitignore, siga o passo a
 * pip install requets
   
  **Executar a Extração Python:**
-* Execute o script para gerar a base consolidada contendo os 5.000 registros de 2025:
+* Execute o script para gerar a base consolidada contendo os 10.000 registros de 2025:
 * python src/extracao_api.py
 
  **Carregar no Power BI**:
@@ -50,6 +50,10 @@ Como o arquivo final de dados está sob políticas de .gitignore, siga o passo a
 * Vá em Transformar Dados (Power Query) e atualize o parâmetro de caminho local para apontar para o seu arquivo .csv recém-gerado.
 
 * Clique em Fechar e Aplicar para atualizar todos os gráficos automaticamente.
+
+### Atualizações no Mapa de Monitoramento
+* **Drill-down por Estado:** Agora é possível clicar em qualquer estado para visualizar detalhadamente os municípios que registraram casos da doença.
+* **Gradiente de Calor:** Os estados e cidades com maior volume de ocorrências são destacados com cores mais escuras, facilitando a identificação rápida de áreas críticas.
 
 ### Dashboard no PowerBi Service
 https://app.powerbi.com/view?r=eyJrIjoiNDRhNjNhY2YtNjk5MC00ODc0LTk2ZDQtMDNkM2Y5ZjRmYzlhIiwidCI6ImUyNjUzOTI3LTk3MjgtNDFjZC04Y2QzLWFiMTI4YWNkMjA2MSJ9
